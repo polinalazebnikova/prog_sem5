@@ -1,7 +1,8 @@
 # Инвариантная самостоятельная работа
 
 ### [1.1 Исследовать функционал одного из модулей стандартной библиотеки (string, re, datetime, math, random, os, и т.д.) и, используя инструмент Jupyter Notebook, создать документ с описанием и примерами использования его функционала.](https://www.dropbox.com/s/3ngtdqq7fa94gtf/sem5-Tema1-ISR-1.1.ipynb?dl=0)
-[Ссылка](https://github.com/polinalazebnikova/prog_sem5/blob/main/sem5-Tema1-ISR-1.1.md)
+[Ссылка на HTML](https://www.dropbox.com/s/sm84k027nxsy6on/sem5-Tema1-ISR-1.1.html?dl=0)
+[Ссылка на Markdown](https://github.com/polinalazebnikova/prog_sem5/blob/main/sem5-Tema1-ISR-1.1.md)
 ### [1.2 Создание пользовательского пакета для приложения «Гостевая книга» с прототипами методов, позволяющих взаимодействовать с JSON-файлом (создание, удаление, переименование, чтение, запись).](https://replit.com/@PolinaLazebniko/sem5-Tema1-ISR-12#main.py)
 ```python
 """
