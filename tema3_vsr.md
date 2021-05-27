@@ -1,19 +1,4 @@
 # Вариативная самостоятельная работа
 
-### [1.3 Создание программы для считывания данных формата CSV с использованием функционала модуля contextlib.](https://replit.com/@PolinaLazebniko/sem4-Tema1-VSR-11#main.py)
-```python
-"""
-    Лазебникова Полина 
-    ИВТ 2 курс
-    группа 1.1
-
-    Вариативная самостоятельная работа 
-    Задание 1.1: Создание программы для считывания данных формата CSV с использованием функционала модуля contextlib
-"""
-import csv
-
-with open('file.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    for row in csv_reader:
-        print(row)
-```
+### [3.2 Разработать фрагмент электронного ресурса, посвященного шаблону проектирования «Адаптер». Привести пример фрагмента кода, реализующего указанный шаблон, протестировать его работоспособность. Оформить задание в виде корректно работающего приложения и опубликовать его в портфолио.](https://colab.research.google.com/drive/1BC8jcCkx42muliSXUEZur8joBZ6G4b61#scrollTo=9L5akkwVqAAW)
+[Ссылка](https://colab.research.google.com/drive/1BC8jcCkx42muliSXUEZur8joBZ6G4b61#scrollTo=9L5akkwVqAAW)
