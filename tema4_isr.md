@@ -56,66 +56,26 @@ def main():
 main()
 ```
 ### [4.2 Разработать фрагмент программы с использованием библиотеки pyqrcode, позволяющей создавать изображение QR-кода на основе переданной в программу текстовой строки.
-](https://replit.com/@PolinaLazebniko/sem4-Tema1-ISR-12#main.py)
+](https://replit.com/@PolinaLazebniko/sem5-Tema4-ISR-42#main.py)
 ```python
 """
     Лазебникова Полина 
-    ИВТ 2 курс
+    ИВТ 3 курс
     группа 1.1
 
     Инвариантная самостоятельная работа 
-    Задание 1.2: Дополнение программы (задание 1.1) для считывания данных проверкой 
-    утверждений или высказываний (assert). Создание отдельного блока для такой проверки (с помощью __name__) 
-    и скрипта командной строки для запуска этих проверок.
+    Задание 4.2: Разработать фрагмент программы с использованием библиотеки pyqrcode, позволяющей создавать изображение QR-кода на основе переданной в программу текстовой строки.
 """
+import pyqrcode
+import png
 
-def json_read(name_file):
-    """
-    Функция для работы с файлом json
-    Функция формирует строки таблицы из файла, при этом обрабатывая возможные исключения 
-    """ 
-    try:
-        file_open = open(name_file)
-        try:
-            import json
-        except ImportError as e:
-            import json
-            print('Problem with import json')
-        data = json.load(file_open)  
-        t = []
-        title = '| {:^3}| {:^10}| {:^13}| {:^30}| {:^6}| {:^15}|'.format('ID','First name','Last name','Email','Gender','IP-address')
-        delimiter = '-'*len(title)
-        val = '| {id:<3}| {first_name:10}| {last_name:13}| {email:30}| {gender:6}| {ip_address:15}|'
-        t.append(delimiter)  
-        t.append(title)
-        t.append(delimiter)  
-        for i in range(len(data)):
-            tmp = data[i]
-            res = val.format(**tmp)
-            t.append(res)
-            t.append(delimiter)
-        return t
-    except FileNotFoundError as e:
-        print('File not found')  
-    except IOError as e:
-        print('Problem with input or output')
-    except NameError as e:
-        print('Name not found')
+def qr_simple(str_input):
+    QR = pyqrcode.create(str_input)
+    QR.png('qr.png', scale=13)
 
-def main():
-    """
-    Функция, которая вызывает функцию json_read, в качестве аргумента используя файл json, и выводит результат
-    """
-    file_name = json_read('MOCK_DATA.json')
-    for i in file_name:
-        print(i)
-
-main()
-
-if __name__ == "__main__":
-    assert json_read('MOCK_DATA.json') is not  tuple
-    #assert json_read('MOCK_DATA.json') is list, 'Типы не совпадают'
-    #assert json_read('MOCK_DATA.json') is set, 'Типы не совпадают' 
+if __name__ == '__main__':
+    input_str = input('Введите строку: ')
+    qr_simple(input_str)
 ```
 ### [4.3 Реализовать модификацию изображения генерируемого QR-кода: раскрасить фрагменты изображения в несколько случайно определяемых цветов.](https://replit.com/@PolinaLazebniko/sem4-Tema1-ISR-13)
 ```python
