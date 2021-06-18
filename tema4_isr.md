@@ -8,9 +8,7 @@
     группа 1.1
 
     Инвариантная самостоятельная работа 
-    Задание 4.1: Используя свободные источники (bn.ru, avito.ru и т.д.), собрать данные о ценах на недвижимость, 
-    выставленную на продажу в разных районах города. Преобразовать данные в формат csv. Разработать скрипт для визуализации 
-    данных, используя библиотеку mathplotlib. Для визуализации использовать тип “точечная диаграмма” (scatterplot).
+    Задание 4.1: Используя свободные источники (bn.ru, avito.ru и т.д.), собрать данные о ценах на недвижимость, выставленную на продажу в разных районах города. Преобразовать данные в формат csv. Разработать скрипт для визуализации данных, используя библиотеку mathplotlib. Для визуализации использовать тип “точечная диаграмма” (scatterplot).
 """
 import csv
 import matplotlib.pyplot as plt
@@ -35,10 +33,8 @@ def diag(lable, args):
     plt.xlabel('x')
     plt.ylabel('y')
     plt.legend(lable, loc="best")
-    plt.savefig("ISR-4-1.png")
+    plt.savefig("result.png")
     plt.show()
-
-
 
 def csv_reader(file_csv):
     reader = csv.reader(file_csv, delimiter=';')
@@ -59,17 +55,15 @@ def csv_reader(file_csv):
         time += [k]
     return time, datas['first']
 
-
 if __name__ == "__main__":
-    csv_path = "data.csv"  # Приморский
-    csv_path_1 = "data2.csv"  # Василеостровский
+    csv_path = "data.csv"  # Приморский район
+    csv_path_1 = "data2.csv"  # Василеостровский район
     datas_for_diag = []
     paths = [csv_path, csv_path_1]
     labels = ['Приморский район', 'Василеостровский район']
     for i in range(len(paths)):
         with open(paths[i], encoding='utf-8', newline='') as f_obj:
             datas_for_diag += [csv_reader(f_obj)]
-    # print(datas_for_diag[0])
     diag(labels, datas_for_diag)
 ```
 ### [4.2 Разработать фрагмент программы с использованием библиотеки pyqrcode, позволяющей создавать изображение QR-кода на основе переданной в программу текстовой строки.](https://replit.com/@PolinaLazebniko/sem5-Tema4-ISR-42#main.py)
